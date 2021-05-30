@@ -8,6 +8,7 @@
 #include "converter/MessageConverter.h"
 
 #include <network/thread/messagethread.h>
+#include "network/service/message/strategy/AntRouteBuilderService.h"
 
 using namespace std;
 
@@ -47,7 +48,7 @@ void NetworkUtil::writeMessage(){
     cin>>action;
     while(action !='q'){
         if(action == 'a'){
-//            QProcess::execute("startup.sh");
+            //            QProcess::execute("startup.sh");
             cout<<endl<<"Enter host:";
             cin>>host;
             cout<<endl<<"Enter port:";
@@ -82,8 +83,22 @@ void NetworkUtil::writeMessage(){
             MessageThread *messageThread = new MessageThread(host,port,jsonMessage);
 
         }
+        if(action == 'b'){
+            cout<<"build route"<<endl;
+            AntRouteBuilderService* routeBuilder = new AntRouteBuilderService();
+            routeBuilder->buildRoute();
 
-        cout<<endl<<"Enter action. Text message -a, Register -r, Node list -n"<<endl;
+        }
+        if(action == 'i'){
+            std::cout<<"node route list"<<std::endl;
+            foreach(auto n ,NETWORK_ROUTE_LIST){
+                cout<<"node :"<<n->host<<":"<<n->port<<" time : "<<n->time<<std::endl;
+            }
+        }
+
+
+
+        cout<<endl<<"Enter action. Text message -a, Register -r, Node list -n, Build route -b"<<endl;
 
         cin>>action;
     }

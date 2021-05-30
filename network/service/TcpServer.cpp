@@ -45,17 +45,15 @@ void MyTcpServer::slotNewConnection()
 void MyTcpServer::slotServerRead()
 {
     MessageProcessingService messageProcessingService;
-    cout<<"Reading data"<<endl;
+    cout<<"Reading data(SERVER)"<<endl;
     while(mTcpSocket->bytesAvailable()>0)
     {
         QByteArray array = mTcpSocket->readAll();
 
-        messageProcessingService.process(array);
-//        cout<< array.toStdString();
 
-//        mTcpSocket->write(array);
+        messageProcessingService.process(array,mTcpSocket);
     }
-    cout<<endl<<"Ended reading data"<<endl;
+    cout<<endl<<"Ended reading data(SERVER)"<<endl;
 }
 
 void MyTcpServer::slotClientDisconnected()

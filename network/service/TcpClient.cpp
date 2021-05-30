@@ -35,14 +35,14 @@ bool Client::isConnected(){
 
 void Client::readData()
 {
-    cout<<"Reading data"<<endl;
+    cout<<"Reading data(CLIENT)"<<endl;
     while(socket->bytesAvailable()>0)
     {
         QByteArray array = socket->readAll();
 
         cout<< array.toStdString();
 
-        socket->write(array);
+//        socket->write(array);
     }
-    cout<<endl<<"Ended reading data"<<endl;
+    cout<<endl<<"Ended reading data(CLIENT)"<<endl;
 }

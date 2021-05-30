@@ -30,13 +30,15 @@ HEADERS += constant/NetworkConstant.h \
     network/service/TcpClient.h \
     network/service/message/MessageProcessingService.h \
     network/service/message/MessageProcessor.h \
+    network/service/message/strategy/AntRouteBuilderService.h \
     network/service/message/strategy/NodeRegistrationService.h \
     network/service/message/strategy/NodeSharingService.h \
     network/service/message/strategy/TextMessageService.h \
     network/thread/messagethread.h \
     util/NetworkUtil.h \
     network/service/TcpServer.h \
-    util/TerminalMenuThread.h
+    util/TerminalMenuThread.h \
+    util/TimeUtil.h
 SOURCES += main.cpp \
     constant/NetworkConstant.cpp \
     converter/MessageConverter.cpp \
@@ -44,10 +46,12 @@ SOURCES += main.cpp \
     network/service/TcpClient.cpp \
     network/service/message/MessageProcessingService.cpp \
     network/service/message/MessageProcessor.cpp \
+    network/service/message/strategy/AntRouteBuilderService.cpp \
     network/service/message/strategy/NodeRegistrationService.cpp \
     network/service/message/strategy/NodeSharingService.cpp \
     network/service/message/strategy/TextMessageService.cpp \
     network/thread/messagethread.cpp \
     util/NetworkUtil.cpp \
     network/service/TcpServer.cpp \
-    util/TerminalMenuThread.cpp
+    util/TerminalMenuThread.cpp \
+    util/TimeUtil.cpp

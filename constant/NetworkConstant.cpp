@@ -11,3 +11,4 @@ QString PUBLIC_UUID = QUuid::createUuid().toString();
 const int MAIN_LOCAL_PORT = 8081;
 
 QMap<std::string, NodeDto*> NETWORK_NODE_LIST = {{HOST.toStdString()+":"+QString(PORT).toStdString(), new NodeDto(HOST.toStdString(),PORT,PUBLIC_UUID.toStdString())}};
+QMap<std::string, NodeDto*> NETWORK_ROUTE_LIST= {};

@@ -10,6 +10,7 @@ TextMessageProcessor::TextMessageProcessor()
 
 bool TextMessageProcessor::isMatch(QString type){
     if(type == "TextMessage"){
+        std::cout<<"TextMessage"<<std::endl;
         return true;
     } else {
         return false;

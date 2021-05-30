@@ -15,5 +15,7 @@ extern const int MAIN_LOCAL_PORT;
 
 extern QMap<std::string,NodeDto*> NETWORK_NODE_LIST;
 
+extern QMap<std::string,NodeDto*> NETWORK_ROUTE_LIST;
+
 
 #endif // NETWORKCONSTANT_H

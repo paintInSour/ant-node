@@ -13,6 +13,9 @@ public:
     std::string host;
     std::string uuid;
     int port;
+    long time;
+    long timeCheckStart;
+    long timeCheckEnd;
 };
 
 #endif // NODEDTO_H
